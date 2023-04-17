@@ -1,0 +1,7 @@
+<div>
+  <ng-container *ngFor="let box of timeBoxes$ | async">
+    <bit-timebox [timeBox]="box"></bit-timebox>
+  </ng-container>
+  <span (click)="onAddClick()" class="material-icons">add</span>
+</div>
+<div [routerLink]="['/overview']" class="material-icons next">keyboard_double_arrow_right</div>

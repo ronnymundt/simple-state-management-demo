@@ -1,0 +1,27 @@
+div {
+  display: grid;
+  grid-template-columns: min-content;
+  justify-content: center;
+  padding: 2rem;
+
+  .material-icons {
+    justify-self: right;
+  }
+}
+
+.material-icons {
+  cursor: pointer;
+  opacity: 0.5;
+
+  &:hover{
+    opacity: 1;
+  }
+
+  &.next {
+    font-size: 3rem;
+
+    &:hover {
+      border: solid 1px;
+    }
+  }
+}
