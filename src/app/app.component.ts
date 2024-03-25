@@ -1,18 +1,11 @@
 import { Component } from '@angular/core';
-import {TimeboxStoreService} from "./services";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: true,
+    imports: [RouterOutlet]
 })
-export class AppComponent {
-  constructor(private store: TimeboxStoreService) {
-    // init. first task in timebox store
-    this.store.timeBoxActions.add({
-      task: 'New task',
-      duration: '01:30',
-      id: crypto.randomUUID()
-    })
-  }
-}
+export class AppComponent { }
