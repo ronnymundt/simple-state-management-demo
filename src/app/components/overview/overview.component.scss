@@ -3,8 +3,6 @@
 
   &.grid {
     display: grid;
-    grid-template-columns: min-content;
-    justify-content: center;
     row-gap: 1rem;
   }
 
@@ -25,17 +23,4 @@
   }
 }
 
-.material-icons {
-  display: grid;
-  grid-template-columns: min-content;
-  justify-content: center;
-  padding: 2rem;
-  font-size: 3rem;
-  cursor: pointer;
-  opacity: 0.5;
 
-  &:hover{
-    opacity: 1;
-    border: solid 1px;
-  }
-}

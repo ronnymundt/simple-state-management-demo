@@ -1,7 +1,5 @@
-<div>
-  <ng-container *ngFor="let box of timeBoxes$ | async">
-    <bit-timebox [timeBox]="box"></bit-timebox>
-  </ng-container>
-  <span (click)="onAddClick()" class="material-icons">add</span>
+<bit-timebox [timeBox]="box" *ngFor="let box of timeBoxes$ | async"></bit-timebox>
+<div class="actions">
+  <button mat-raised-button (click)="onAddClick()">Add Task</button>
+  <button mat-stroked-button [routerLink]="['/overview']">Task Overview</button>
 </div>
-<div [routerLink]="['/overview']" class="material-icons next">keyboard_double_arrow_right</div>

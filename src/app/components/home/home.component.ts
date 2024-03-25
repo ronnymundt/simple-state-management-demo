@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {TimeboxStoreService} from "../../services/timebox.service";
+import {FormBuilder} from "@angular/forms";
+import {TimeboxStoreService} from "../../services";
 
 @Component({
   selector: 'bit-home',
@@ -10,7 +11,8 @@ export class HomeComponent {
   timeBoxes$ = this.store.timeBoxes$;
 
   constructor(
-    private store: TimeboxStoreService
+    private store: TimeboxStoreService,
+    private readonly fb: FormBuilder
   ) { }
 
   /**
@@ -18,7 +20,7 @@ export class HomeComponent {
    */
   onAddClick() {
     this.store.timeBoxActions.add({
-        task: 'Neue Aufgabe',
+        task: null,
         duration: '01:00',
         id: crypto.randomUUID()
     });

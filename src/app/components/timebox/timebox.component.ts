@@ -1,12 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ITimebox} from "../../interfaces";
-import {TimeboxStoreService} from "../../services/timebox.service";
+import {TimeboxStoreService} from "../../services";
 
 @Component({
   selector: 'bit-timebox',
   templateUrl: './timebox.component.html',
-  styleUrls: ['./timebox.component.scss']
+  styleUrls: ['./timebox.component.scss'],
 })
 export class TimeboxComponent implements OnInit {
   @Input() timeBox!: ITimebox;
@@ -25,9 +25,9 @@ export class TimeboxComponent implements OnInit {
 
   private initFormGroup(): void {
     this.timeBoxInputForm = this.fb.group({
-      task: new FormControl(),
-      duration: new FormControl(),
-      id: new FormControl()
+      task: ['', Validators.required],
+      duration: [],
+      id: []
     });
   }
 

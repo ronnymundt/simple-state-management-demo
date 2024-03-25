@@ -1,6 +1,6 @@
 export interface ITimebox {
   id: string;
-  task: string;
+  task: string | null | undefined;
   duration: string;
 }
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TimeboxStoreService} from "./services/timebox.service";
+import {TimeboxStoreService} from "./services";
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,10 @@ import {TimeboxStoreService} from "./services/timebox.service";
 })
 export class AppComponent {
   constructor(private store: TimeboxStoreService) {
+    // init. first task in timebox store
     this.store.timeBoxActions.add({
-      task: 'Neue Aufgabe',
-      duration: '01:00',
+      task: 'New task',
+      duration: '01:30',
       id: crypto.randomUUID()
     })
   }

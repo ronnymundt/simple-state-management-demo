@@ -1,1 +1,1 @@
-export { ITimebox } from './timebox-store.interface';
+export * from './timebox-store.interface';

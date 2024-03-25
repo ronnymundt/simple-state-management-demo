@@ -1,8 +1,12 @@
 <div class="overview grid">
-  <h3>Offene Aufgaben</h3>
+  <h3>Tasks</h3>
   <div *ngFor="let item of timeBoxes$ | async">
     <span>{{item.task}}</span>
     <span>{{item.duration}}</span>
   </div>
+  <button
+    mat-raised-button
+    [routerLink]="['/home']"
+    class="material-icons back">Back</button>
 </div>
-<div [routerLink]="['/home']" class="material-icons back">keyboard_double_arrow_left</div>
+

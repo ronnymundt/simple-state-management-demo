@@ -1,18 +1,22 @@
 <div [formGroup]="timeBoxInputForm">
   <mat-form-field>
-    <mat-label>Aufgabe</mat-label>
-    <input formControlName="task" matInput type="text" placeholder="Was ist zu erledigen?">
+    <mat-label>Task</mat-label>
+    <input
+      formControlName="task"
+      matInput type="text">
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Dauer</mat-label>
+    <mat-label>Duration</mat-label>
     <input formControlName="duration" matInput type="time">
   </mat-form-field>
 
-  <span (click)="onSaveClick()"
-        class="material-icons"
-        [ngClass]="{'save-indicator': timeBoxInputForm.dirty}">save</span>
-
-  <span (click)="onDeleteClick()" class="material-icons">delete</span>
+  <span
+    (click)="onSaveClick()"
+    class="material-icons"
+    [ngClass]="{'save-indicator': timeBoxInputForm.dirty}">save</span>
+  <span
+    (click)="onDeleteClick()"
+    class="material-icons">delete</span>
 </div>
 

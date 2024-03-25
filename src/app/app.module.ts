@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
+import {MatButton} from "@angular/material/button";
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,13 +17,14 @@ import {ReactiveFormsModule} from "@angular/forms";
     OverviewComponent,
     TimeboxComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatButton
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

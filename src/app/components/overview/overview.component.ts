@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TimeboxStoreService} from "../../services/timebox.service";
+import {TimeboxStoreService} from "../../services";
 
 @Component({
   selector: 'bit-overview',
@@ -9,6 +9,5 @@ import {TimeboxStoreService} from "../../services/timebox.service";
 export class OverviewComponent {
   timeBoxes$ = this.store.timeBoxes$;
 
-  constructor(private store: TimeboxStoreService) {
-  }
+  constructor(private store: TimeboxStoreService) { }
 }
