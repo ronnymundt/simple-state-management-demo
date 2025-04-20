@@ -1,4 +1,6 @@
-<bit-timebox [timeBox]="box" *ngFor="let box of timeBoxes$ | async"></bit-timebox>
+@for(box of timeBoxes$ | async; track box.id) {
+  <bit-timebox [timeBox]="box"></bit-timebox>
+}
 <div class="actions">
   <button mat-raised-button (click)="onAddClick()">Add Task</button>
   <button mat-stroked-button [routerLink]="['/overview']">Task Overview</button>

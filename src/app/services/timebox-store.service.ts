@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {ITimebox} from "../interfaces";
 import {BehaviorSubject} from "rxjs";
-import {ITimeBoxActions} from "../interfaces/timebox-store.interface";
+import {ITimeBoxActions} from "../interfaces";
 
 @Injectable({
   providedIn: 'root'

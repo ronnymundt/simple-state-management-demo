@@ -1,9 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {TimeboxStoreService} from "../../services";
 import { RouterLink } from '@angular/router';
 import { MatButton } from '@angular/material/button';
 import { TimeboxComponent } from '../timebox/timebox.component';
-import { NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'bit-home',
@@ -11,24 +11,15 @@ import { NgFor, AsyncPipe } from '@angular/common';
     styleUrls: ['./home.component.scss'],
     standalone: true,
     imports: [
-      NgFor,
+      CommonModule,
       TimeboxComponent,
       MatButton,
       RouterLink,
-      AsyncPipe
     ]
 })
 export class HomeComponent {
+  private store = inject(TimeboxStoreService)
   timeBoxes$ = this.store.timeBoxes$;
-
-  constructor(private store: TimeboxStoreService) {
-    // init. first task in timebox store
-    this.store.timeBoxActions.add({
-      task: 'New task',
-      duration: '01:30',
-      id: crypto.randomUUID()
-    });
-  }
 
   /**
    * Event Methode fügt neue TimeBox zum State hinzu.
