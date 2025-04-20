@@ -1,14 +1,16 @@
 <div class="overview grid">
   <h3>Tasks</h3>
-  @for(item of timeBoxes$ | async; track item.id) {
+  @for (item of timeBoxes$ | async; track item.id) {
     <div>
-      <span>{{item.task}}</span>
-      <span>{{item.duration}}</span>
+      <span>{{ item.task }}</span>
+      <span>{{ item.duration }}</span>
     </div>
   }
   <button
     mat-raised-button
     [routerLink]="['/home']"
-    class="material-icons back">Back</button>
+    class="material-icons back"
+  >
+    Back
+  </button>
 </div>
-

@@ -1,23 +1,22 @@
-import {Component, Input, OnInit} from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from "@angular/forms";
-import {ITimebox} from "../../interfaces";
-import {TimeboxStoreService} from "../../services";
+import { Component, Input, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import { ITimebox } from '../../interfaces';
+import { TimeboxStoreService } from '../../services';
 import { NgClass } from '@angular/common';
 import { MatInput } from '@angular/material/input';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 
 @Component({
-    selector: 'bit-timebox',
-    templateUrl: './timebox.component.html',
-    styleUrls: ['./timebox.component.scss'],
-    standalone: true,
-    imports: [
-        ReactiveFormsModule,
-        MatFormField,
-        MatLabel,
-        MatInput,
-        NgClass,
-    ],
+  selector: 'bit-timebox',
+  templateUrl: './timebox.component.html',
+  styleUrls: ['./timebox.component.scss'],
+  standalone: true,
+  imports: [ReactiveFormsModule, MatFormField, MatLabel, MatInput, NgClass],
 })
 export class TimeboxComponent implements OnInit {
   @Input() timeBox!: ITimebox;
@@ -26,8 +25,8 @@ export class TimeboxComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private store: TimeboxStoreService
-  ) { }
+    private store: TimeboxStoreService,
+  ) {}
 
   ngOnInit(): void {
     this.initFormGroup();
@@ -38,7 +37,7 @@ export class TimeboxComponent implements OnInit {
     this.timeBoxInputForm = this.fb.group({
       task: ['', Validators.required],
       duration: [],
-      id: []
+      id: [],
     });
   }
 
@@ -48,6 +47,6 @@ export class TimeboxComponent implements OnInit {
   }
 
   onDeleteClick(): void {
-    this.store.timeBoxActions.remove(this.timeBoxInputForm.value)
+    this.store.timeBoxActions.remove(this.timeBoxInputForm.value);
   }
 }
